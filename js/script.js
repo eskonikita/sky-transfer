@@ -1,18 +1,37 @@
-/* === слайдер «Водители» ================================================ */
+const slidesCount = document.querySelectorAll('.swiper .swiper-slide').length;
+
+const isDesktop = window.innerWidth >= 992;
+const enableSlider = isDesktop && slidesCount > 4;
+
 const driversSwiper = new Swiper('.swiper', {
-    loop: true,
-    slidesPerView: 1.1,
-    spaceBetween: 10,
-    navigation: {
-      nextEl: '.swiper-button-next-drivers',
-      prevEl: '.swiper-button-prev-drivers',
+  loop: enableSlider,
+  slidesPerView: 1.1,
+  spaceBetween: 10,
+  navigation: {
+    nextEl: '.swiper-button-next-drivers',
+    prevEl: '.swiper-button-prev-drivers',
+  },
+  breakpoints: {
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 40,
     },
-    breakpoints: {
-      768: { slidesPerView: 2, spaceBetween: 40, enabled: false },
-      992: { slidesPerView: 4, spaceBetween: 40, enabled: false },
+    992: {
+      slidesPerView: 4,
+      spaceBetween: 40,
     },
-  });
-  
+  },
+  on: {
+    init: function () {
+      // отключаем навигацию, если слайдов мало
+      if (!enableSlider) {
+        document.querySelector('.swiper-button-next-drivers')?.classList.add('hidden');
+        document.querySelector('.swiper-button-prev-drivers')?.classList.add('hidden');
+      }
+    }
+  }
+});
+
   /* === после полной загрузки разметки ==================================== */
   document.addEventListener('DOMContentLoaded', () => {
   
@@ -69,26 +88,143 @@ const driversSwiper = new Swiper('.swiper', {
   }
   
   /* ----------------------------------------------------------------------- */
-  /* кастомный селект (.c-select) */
-  function setupCustomSelect(select) {
-    const trigger = select.querySelector('.c-select__trigger');
-    const label   = select.querySelector('.c-select__label');
-    const list    = select.querySelector('.c-select__list');
-    const hidden  = select.querySelector('input[type="hidden"]');
+/* ============================================================
+   ВСПОМОГАТЕЛЬНАЯ ФУНКЦИЯ: закрывает все .c-select.open кроме except
+   ============================================================ */
+   function closeOtherSelects(except) {
+    document.querySelectorAll('.c-select.open').forEach(sel => {
+      if (sel === except) return;
   
-    trigger.addEventListener('click', e => {
-      e.stopPropagation();
-      select.classList.toggle('open');
-    });
+      sel.classList.remove('open');
   
-    list.addEventListener('click', e => {
-      const item = e.target.closest('.c-select__item');
-      if (!item) return;
-      label.textContent = item.dataset.value;
-      hidden.value      = item.dataset.value;
-      select.classList.remove('open');
+      /* сбрасываем поиск и фильтр, если они были */
+      const search = sel.querySelector('.c-select__search');
+      if (search) search.value = '';
+  
+      sel.querySelectorAll('.c-select__item').forEach(li => li.hidden = false);
     });
   }
+  
+  /* ============================================================
+   ВСПОМОГАТЕЛЬНАЯ ФУНКЦИЯ: закрывает все .c-select.open кроме except
+   ============================================================ */
+function closeOtherSelects(except) {
+  document.querySelectorAll('.c-select.open').forEach(sel => {
+    if (sel === except) return;
+
+    sel.classList.remove('open');
+
+    /* сбрасываем поиск и фильтр, если они были */
+    const search = sel.querySelector('.c-select__search');
+    if (search) search.value = '';
+
+    sel.querySelectorAll('.c-select__item').forEach(li => li.hidden = false);
+  });
+}
+
+/* ============================================================
+   ИНИЦИАЛИЗАЦИЯ ОДНОГО СЕЛЕКТА
+   ============================================================ */
+function setupCustomSelect(select) {
+  const trigger = select.querySelector('.c-select__trigger');
+  const label   = select.querySelector('.c-select__label');
+  const list    = select.querySelector('.c-select__list');
+  const hidden  = select.querySelector('input[type="hidden"]');
+  const items   = list.querySelectorAll('.c-select__item');
+
+  // может отсутствовать
+  const search  = select.querySelector('.c-select__search');
+  const hasSearch = !!search;
+
+  const placeholder = select.dataset.placeholder || label.textContent;
+
+  if (!trigger || !label || !list || !hidden) {
+    console.warn('setupCustomSelect: пропущены элементы внутри', select);
+    return;
+  }
+
+  /* ------------ открыть / закрыть ------------ */
+  trigger.addEventListener('click', e => {
+    e.stopPropagation();
+
+    /* ⬇️ сначала закрываем все другие селекты */
+    closeOtherSelects(select);
+
+    /* затем переключаем текущий */
+    select.classList.toggle('open');
+
+    if (select.classList.contains('open') && hasSearch) {
+      search.value = '';
+      resetFilter();
+      setTimeout(() => search.focus(), 0);   // фокус в поиске
+    }
+  });
+
+  /* ------------ выбор пункта ------------ */
+  list.addEventListener('click', e => {
+    const item = e.target.closest('.c-select__item');
+    if (!item) return;
+
+    label.textContent = item.dataset.value;
+    hidden.value      = item.dataset.value;
+    closeSelect();                            // закрываем после выбора
+  });
+
+  /* ------------ поиск (если есть) ------------ */
+  if (hasSearch) {
+    search.addEventListener('input', () => {
+      const q = search.value.trim().toLowerCase();
+      if (q.length < 2) return resetFilter();
+
+      items.forEach(li => {
+        li.hidden = !li.dataset.value.toLowerCase().includes(q);
+      });
+    });
+  }
+
+  /* ------------ клик вне селекта ------------ */
+  document.addEventListener('click', e => {
+    if (!select.contains(e.target)) closeSelect(true);
+  });
+
+  /* ------------ утилиты ------------ */
+  function resetFilter() { items.forEach(li => li.hidden = false); }
+
+  function closeSelect(resetLabelIfEmpty = false) {
+    select.classList.remove('open');
+    if (hasSearch) {
+      search.value = '';
+      resetFilter();
+    }
+    if (resetLabelIfEmpty && !hidden.value) {
+      label.textContent = placeholder;
+    }
+  }
+}
+
+/* ============================================================
+   ИНИЦИАЛИЗАЦИЯ ВСЕХ СЕЛЕКТОВ ПОСЛЕ ЗАГРУЗКИ DOM
+   ============================================================ */
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.c-select').forEach(setupCustomSelect);
+});
+
+  
+  /* ============================================================
+     ИНИЦИАЛИЗАЦИЯ ВСЕХ СЕЛЕКТОВ ПОСЛЕ ЗАГРУЗКИ DOM
+     ============================================================ */
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.c-select').forEach(setupCustomSelect);
+  });
+  
+/* инициируем после загрузки DOM */
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.c-select').forEach(setupCustomSelect);
+});
+
+/* инициализируем все селекты на странице */
+document.querySelectorAll('.c-select').forEach(setupCustomSelect);
+
   
   document.addEventListener('click', () => {
     document.querySelectorAll('.c-select.open')
@@ -161,4 +297,61 @@ const driversSwiper = new Swiper('.swiper', {
     }
     document.addEventListener('click', closeAllCityLists);
   }
+  
+  function initCarSwiper() {
+    const swiperContainer = document.querySelector('.car-swiper');
+    const wrapper = swiperContainer.querySelector('.car-cards');
+    const slides = wrapper.querySelectorAll('.car-tabs__content');
+  
+    if (window.innerWidth < 768) {
+      // Убираем .row чтобы не ломался swiper
+     wrapper.classList.remove('row');
+      swiperContainer.classList.add('swiper');
+      wrapper.classList.add('swiper-wrapper');
+  
+      slides.forEach((slide) => {
+        slide.classList.add('swiper-slide');
+      });
+  
+      const tabButtons = document.querySelectorAll('.car-tabs__button');
+      let initialIndex = 0;
+      tabButtons.forEach((btn, i) => {
+        if (btn.classList.contains('is-active')) {
+          initialIndex = i;
+        }
+      });
+      const swiper = new Swiper('.car-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        loop: false,
+        initialSlide: initialIndex,
+        on: {
+          slideChange(swiper) {
+            const index = swiper.activeIndex;
+        
+            tabButtons.forEach((btn, i) => {
+              const isActive = i === index;
+              btn.classList.toggle('is-active', isActive);
+              if (isActive) {
+                btn.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'nearest',
+                  inline: 'center'
+                });
+              }
+            });
+          }
+        }
+        
+      });
+  
+      tabButtons.forEach((btn, index) => {
+        btn.addEventListener('click', () => {
+          swiper.slideTo(index);
+        });
+      });
+    }
+  }
+  
+  window.addEventListener('DOMContentLoaded', initCarSwiper);
   

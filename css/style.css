@@ -677,14 +677,14 @@ body.no-scroll {
 
 .routes__tab:hover {
     border: 1px solid var(--accent-color);
-    padding: 19px 15px;
+
     background-color: var(--accent-color);
     color: #000;
 }
 
 .routes__tab.is-active {
-    border: 0px;
-    padding: 19px 15px;
+
+
     border: 1px solid var(--accent-color);
     background-color: var(--accent-color);
     color: #000;
@@ -742,6 +742,13 @@ body.no-scroll {
     flex-direction: column;
     gap: 16px;
     align-items: center;
+    justify-content: space-between;
+    transition: all ease-in 0.3s;
+}
+
+.routes__card:hover {
+    background-color: #E7E7E7;
+
 }
 
 .routes__direction {
@@ -862,6 +869,7 @@ body.no-scroll {
     }
 
     .routes__tabs {
+        padding-bottom: 10px;
         margin-bottom: 20px;
     }
 
@@ -871,7 +879,7 @@ body.no-scroll {
     }
 
     .routes__tab.is-active {
-        padding: 12px;
+        padding: 11px;
     }
 }
 
@@ -1116,7 +1124,7 @@ body.no-scroll {
     background-color: var(--accent-bg);
     width: 40px;
     height: 40px;
-
+    cursor: pointer;
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -1161,7 +1169,7 @@ body.no-scroll {
         margin-bottom: 24px;
     }
 
-    .swiper-buttons {
+    .swiper-buttons .hidden {
         display: none;
     }
 }
@@ -1891,16 +1899,24 @@ body.no-scroll {
     border-radius: 100%;
 }
 
+@media (max-width: 767px) {
+
+
+    .cars .swiper-slide {
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
 
 @media (max-width: 768px) {
 
     .car-tabs__content {
-        display: none;
+        padding-bottom: 10px;
+
     }
 
-    .car-tabs__content.is-visible {
-        display: block;
-    }
 
 
     .car-tabs {
@@ -1909,6 +1925,7 @@ body.no-scroll {
         gap: 4px;
         overflow-x: auto;
         margin-bottom: 20px;
+        padding-bottom: 10px;
     }
 
     .car-tabs__button {
@@ -2445,12 +2462,14 @@ body.no-scroll {
 }
 
 .calc__btn {
+    height: 70px;
     width: 100%;
-    padding: 28px 0;
+    padding: 27px 0;
     border: none;
     border-radius: 12px;
     background: var(--accent-color);
     font-size: 16px;
+    line-height: 0.9;
     font-weight: 600;
     color: #000;
     cursor: pointer
@@ -2506,16 +2525,33 @@ textarea:focus {}
     background-color: var(--accent-color-hover);
 }
 
+
 .calc__map {
+    position: relative;
     height: 100%;
     min-height: 460px;
-    background: #9B9B9B url("../img/map.jpg") center/cover no-repeat;
     border: 3px solid #fff;
     border-radius: 20px;
-    padding: 36px 30px
+    padding: 0;
+    overflow: hidden;
+    padding: 36px 30px;
+    background: none;
+    /* убираем фон */
 }
 
+.calc__map-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+
 .calc__route-bar {
+    z-index: 2;
+    position: relative;
     background: #fff;
     border-radius: 12px;
     padding: 10px;
@@ -2598,8 +2634,10 @@ textarea:focus {}
     }
 
     .calc__btn {
-        padding: 18px 0;
+        padding: 17px 0;
         font-size: 14px;
+        line-height: 0.9;
+        height: 50px;
     }
 
     .calc__info {
@@ -2663,9 +2701,23 @@ textarea:focus {}
 .contact-map {
     padding: 20px;
     width: 100%;
-    background: url("../img/map.jpg") center/cover no-repeat;
+    position: relative;
     border-radius: 20px;
+    overflow: hidden;
+    min-height: 400px;
 }
+
+.contact-map__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+
+
 
 /* ===== белая карточка ===== */
 .contact-card {
@@ -3180,6 +3232,10 @@ textarea:focus {}
         font-size: 14px;
         height: 53px;
     }
+
+    .c-select__list {
+        text-align: left;
+    }
 }
 
 .calc__form .c-select {
@@ -3212,9 +3268,9 @@ textarea:focus {}
     top: 100%;
     left: 0;
     right: 0;
-    max-height: 240px;
+    max-height: 180px;
     overflow-y: auto;
-    margin: 4px 0 0;
+    margin: 0px 0 0;
     padding: 4px 0;
     list-style: none;
     background: #fff;
@@ -3253,4 +3309,37 @@ textarea:focus {}
 .c-select__chevron {
     transition: .25s;
     transform: rotate(180deg);
+}
+
+.ymaps-2-1-79-map-copyrights-promo {
+    display: none !important;
+}
+
+.c-select__search-wrap {
+    display: none;
+    /* по умолчанию скрыто */
+    padding: .25rem .5rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.c-select.open .c-select__search-wrap {
+    display: block;
+    position: relative;
+    z-index: 2;
+}
+
+.c-select__search {
+    color: #000;
+    width: 100%;
+    border: none;
+    outline: none;
+    font: inherit;
+}
+
+.c-select__search-wrap {
+    display: none;
+}
+
+.c-select.open .c-select__search-wrap {
+    display: block;
 }
