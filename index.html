@@ -61,7 +61,7 @@
                         <span>Звонок бесплатный</span>
                     </a>
                     <div class="header__button d-none d-xl-flex">
-                        <button class="btn btn-white">Заказать звонок</button>
+                        <button class="btn btn-white js-modal-open">Заказать звонок</button>
                     </div>
 
                     <input type="checkbox" id="side-checkbox" />
@@ -120,7 +120,7 @@
                             </a>
                             <a href="mailto:support@sky-transfer.ru" class="footer__email">support@sky-transfer.ru</a>
                             <div class="header__button ">
-                                <button class="btn btn-white">Заказать звонок</button>
+                                <button class="btn btn-white js-modal-open">Заказать звонок</button>
                             </div>
                         </div>
                     </div>
@@ -143,7 +143,7 @@
                 <span>Звонок бесплатный</span>
             </a>
             <div class="header__button ">
-                <button class="btn btn-white">Заказать звонок</button>
+                <button class="btn btn-white js-modal-open">Заказать звонок</button>
             </div>
         </div>
     </div>
@@ -1810,14 +1810,75 @@
             </div>
         </footer>
     </div>
+    <div class="modal js-modal">
+        <div class="modal__overlay js-modal-close"></div>
+        <div class="modal__content">
+
+
+            <div class="modal__logo">
+                <img src="img/logo.png" alt="SkyTransfer">
+            </div>
+            <h2 class="modal__title">Оставьте свой телефон, и наш менеджер перезвонит вам</h2>
+            <p class="modal__subtitle">Ожидайте звонка менеджера в течение 40 секунд</p>
+
+            <!--<form class="modal__form">-->
+            <div class="modal__form">
+                <input type="tel" class="hero__field hero__field--big" placeholder="Телефон">
+
+
+                <button type="button" class="hero__btn hero__btn--big js-submit">Заказать</button>
+            </div>
+            <!--</form>-->
+
+            <p class="modal__notice">
+                Нажимая на кнопку, я соглашаюсь с условиями<br>
+                <a href="#" class="modal__link">Политики конфиденциальности</a>
+            </p>
+        </div>
+    </div>
+    <div class="modal js-modal">
+        <div class="modal__overlay js-modal-close"></div>
+        <div class="modal__content">
+
+
+            <div class="modal__logo">
+                <img src="img/logo.png" alt="SkyTransfer">
+            </div>
+            <h2 class="modal__title">Оставьте свой телефон, и наш менеджер перезвонит вам</h2>
+            <p class="modal__subtitle">Ожидайте звонка менеджера в течение 40 секунд</p>
+
+            <!--<form class="modal__form">-->
+            <div class="modal__form">
+                <input type="tel" class="hero__field hero__field--big" placeholder="Телефон">
+
+
+                <button type="button" class="hero__btn hero__btn--big js-submit">Заказать</button>
+            </div>
+            <!--</form>-->
+
+            <p class="modal__notice">
+                Нажимая на кнопку, я соглашаюсь с условиями<br>
+                <a href="#" class="modal__link">Политики конфиденциальности</a>
+            </p>
+        </div>
+    </div>
+    <div class="modal modal-success js-modal-success">
+        <div class="modal__overlay js-modal-close"></div>
+        <div class="modal__content">
+            <div class="modal__logo">
+                <img src="img/logo.png" alt="SkyTransfer">
+            </div>
+            <div class="modal__title">Спасибо!<br>
+                Ваша заявка отправлена!</div>
+            <div class="modal__subtitle ">Ожидайте звонка менеджера в течение 40 секунд</div>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-   
+
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=5cac17b6-1a2d-41ba-bdf4-1a42146f3768"
         type="text/javascript"></script>
     <script src="js/script.js"></script>
-
-
 
 
 
