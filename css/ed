@@ -1,0 +1,422 @@
+<style>
+
+        :root {
+            --color-green: #00787D;
+            --color-grey: #F0F0F0;
+            --color-brown: #9A8479;
+            --color-white: #ffffff;
+            --color-black: #000000;
+        }
+
+        .ml-calc {
+            margin: 30px auto 30px;
+        }
+
+        .ml-calc-form__wrap {
+            background-color: var(--color-grey);
+            padding: 20px;
+        }
+        
+        .ml-calc-form {
+            margin-top: 40px;
+        }
+
+        .ml-calc-form__row {
+            margin-bottom: 10px;
+        }
+
+        /* Поле ввода */
+        .ml-calc-form-amount__input {
+            border: none;
+            padding: 5px 10px;
+
+            width: 100%;
+            background-color: var(--color-grey);
+            transition: background-color .2s ease-in-out;
+
+            font-weight: 500;
+            font-size: 26px;
+
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+
+        .ml-calc-form-amount__input:focus {
+            outline: none;
+            background-color: var(--color-white);
+        }
+
+        .ml-calc-form-amount__label {
+            padding-left: 10px;
+            padding-right: 10px;
+
+            font-weight: 600;
+            font-size: 20px;
+
+            display: block;
+
+            margin-bottom: 10px;
+            color: var(--color-brown);
+        }
+
+        /* Поля с тектом */
+        .ml-calc-form-title,
+        .ml-calc-form-initial-payment,
+        .ml-calc-form-total
+        {
+            font-weight: 600;
+            font-size: 20px;
+            padding-left: 10px;
+            padding-right: 10px;
+            color: var(--color-brown);
+        }
+
+
+        .ml-calc-form-initial-payment span,
+        .ml-calc-form-total span{
+            display: block;
+            margin-top: 10px;
+            font-weight: 500;
+            font-size: 22px;
+            color: var(--color-black);
+        }
+
+        /* Переключатели */
+        .ml-calc-form-periods {
+            padding: 10px;
+        }
+
+        .ml-calc-form-period {
+            position: relative;
+            margin-right: 15px;
+        }
+        .ml-calc-form-period input{
+            position: absolute;
+            opacity: 0;
+            visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .ml-calc-form-period span{
+            display: inline-flex;
+            align-items: center;
+            cursor: pointer;
+
+            font-weight: 500;
+            font-size: 22px;
+            min-width: 87px;
+
+        }
+
+        .ml-calc-form-period span::before {
+            content: '';
+            display: block;
+            margin-right: 10px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: var(--color-white);
+            border: 4px solid var(--color-white);
+            outline: 2px solid var(--color-brown);
+        }
+
+        .ml-calc-form-period input:checked ~ span::before {
+            background-color: var(--color-green);
+        }
+
+        
+
+        /*  Таблица  */
+
+        .ml-calc-form-result-title {
+            margin: 40px 0;
+            font-weight: 600;
+        }
+        
+        .ml-calc-form-result__header {
+            display: none;
+        }
+        
+        
+        .ml-calc-form-row {
+            margin: 20px 0;
+            padding: 20px;
+            border: 2px solid var(--color-grey);
+        }
+        
+        .ml-calc-form-row__year,
+        .ml-calc-form-row__percent {
+            margin-bottom: 5px;
+        }
+        
+        .ml-calc-form-row__main-debt .val,
+        .ml-calc-form-row__payment .val,
+        .ml-calc-form-row__balance .val,
+        .ml-calc-form-row__main-debt .title,
+        .ml-calc-form-row__payment .title,
+        .ml-calc-form-row__balance .title {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .ml-calc-form-row__percent .title,
+        .ml-calc-form-row__main-debt .title,
+        .ml-calc-form-row__payment .title,
+        .ml-calc-form-row__balance .title {
+            color: var(--color-brown);
+        }
+            
+         
+        @media screen and (min-width: 768px) {
+            
+            .ml-calc-form-row,
+            .ml-calc-form-result__header {
+                display: flex;
+                width: 100%;
+            }
+            
+            .ml-calc-form-row__year .title,
+            .ml-calc-form-row__percent .title,
+            .ml-calc-form-row__main-debt .title,
+            .ml-calc-form-row__payment .title,
+            .ml-calc-form-row__balance .title {
+                display: none;
+            }
+            
+            .ml-calc-form-row__year .val,
+            .ml-calc-form-row__percent .val,
+            .ml-calc-form-row__main-debt .val,
+            .ml-calc-form-row__payment .val,
+            .ml-calc-form-row__balance .val {
+                margin: 0;
+            }
+            
+            .ml-calc-form-row {
+                margin: 0;
+                border: none;
+                padding: 0;
+            }
+            
+            .ml-calc-form-row__year,
+            .ml-calc-form-row__percent,
+            .ml-calc-form-row__main-debt,
+            .ml-calc-form-row__payment,
+            .ml-calc-form-row__balance {
+                padding: 10px;
+                box-sizing: border-box;
+            }
+            
+            .ml-calc-form-result__header {
+                background-color: var(--color-green);
+                color: var(--color-white);
+                font-weight: 500;
+            }
+            
+            .ml-calc-form-row__year { flex: 0 0 10%; text-align: center;}
+            .ml-calc-form-row__percent { flex: 0 0 20%; text-align: center;}
+            .ml-calc-form-row__main-debt { flex: 0 0 25%; text-align: center;}
+            .ml-calc-form-row__payment { flex: 0 0 20%; text-align: center;}
+            .ml-calc-form-row__balance { flex: 0 0 25%; text-align: center;}
+            
+        }
+
+         @media screen and (min-width: 1200px) {
+             
+            .ml-calc-form__wrap {
+                padding: 25px 20px;
+            }
+             
+            .ml-calc-form-result__header {
+                font-size: 22px;
+            }
+            
+            .ml-calc-form__wrap {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+                
+            }
+            
+            .ml-calc-form__row {
+                margin-bottom: 0;
+            }
+            
+            .ml-calc-form-periods {
+                padding: 15px 10px;
+            }
+            
+            .ml-calc-form-initial-payment span, .ml-calc-form-total span {
+                margin-top: 15px;
+            }
+            
+            .ml-calc-form-result-title {
+                font-size: 36px;
+            }
+            
+         }
+</style>
+
+
+
+
+<div class="ml-calc">
+    <h2 class="section__title">[[++calc-leasing-title]]</h2>
+    <form id="ml-calc-form" class="ml-calc-form">
+        <!--   Форма ввода данных     -->
+        <div class="ml-calc-form__wrap">
+            <!-- Сумма -->
+            <div class="ml-calc-form__row ml-calc-form-amount">
+                <label class="ml-calc-form-amount__label">[[++calc-leasing-amount]], ₸: </label>
+                <input class="ml-calc-form-amount__input" inputmode="numeric" type="text" placeholder="7 500 000" name="amount" value="7 500 000">
+            </div>
+            <!-- Срок -->
+            <div class="ml-calc-form__row">
+                <div class="ml-calc-form-title">
+                    [[++calc-leasing-periods]]
+                </div>
+                <div class="ml-calc-form-periods">
+                    <label class="ml-calc-form-period">
+                        <input type="radio" name="year" value="3" checked>
+                        <span>3 [[numYear? &value=3]]</span>
+                    </label>
+                    <label class="ml-calc-form-period">
+                        <input type="radio" name="year" value="4">
+                        <span>4 [[numYear? &value=4]]</span>
+                    </label>
+                    <label class="ml-calc-form-period">
+                        <input type="radio" name="year" value="5">
+                        <span>5 [[numYear? &value=5]]</span>
+                    </label>
+                    <label class="ml-calc-form-period">
+                        <input type="radio" name="year" value="6">
+                        <span>6 [[numYear? &value=6]]</span>
+                    </label>
+                    <label class="ml-calc-form-period">
+                        <input type="radio" name="year" value="7">
+                        <span>7 [[numYear? &value=7]]</span>
+                    </label>
+                </div>
+            </div>
+            <!-- Размер первоначального взноса -->
+            <div class="ml-calc-form__row">
+                <label class="ml-calc-form-amount__label">Размер первоначального взноса,<br> % (10–50): </label>
+                <input class="ml-calc-form-amount__input" type="number" name="initialPercent" min="10" max="50" step="1" value="20">
+            </div>
+            <!-- Ставка вознаграждения -->
+            <div class="ml-calc-form__row">
+                <label class="ml-calc-form-amount__label">Ставка вознаграждения,<br> % годовых (6–24): </label>
+                <input class="ml-calc-form-amount__input" type="number" name="ratePercent" min="6" max="24" step="0.1" value="6">
+            </div>
+            <!-- Итоги -->
+            <div class="ml-calc-form__row ml-calc-form-initial-payment">
+                [[++calc-leasing-initial-payment]]: <span class="ml-calc-initial-payment"></span>
+            </div>
+            <div class="ml-calc-form__row ml-calc-form-total">
+                [[++calc-leasing-total]]: <span class="ml-calc-total"></span>
+            </div>
+        </div>
+        <!-- / Форма ввода данных     -->
+        <h2 class="ml-calc-form-result-title">[[++calc-leasing-title-result]]</h2>
+        <!--  Таблица результатов     -->
+        <div class="ml-calc-form-result">
+            <div class="ml-calc-form-result__header">
+                <div class="ml-calc-form-row__year">[[++calc-leasing-table-h-year]]</div>
+                <div class="ml-calc-form-row__main-debt">[[++calc-leasing-table-h-main-debt]], ₸</div>
+                <div class="ml-calc-form-row__percent">[[++calc-leasing-table-h-percent]]</div>
+                <div class="ml-calc-form-row__payment">[[++calc-leasing-table-h-payment]], ₸</div>
+                <div class="ml-calc-form-row__balance">[[++calc-leasing-table-h-balance]], ₸</div>
+            </div>
+            <div id="ml-calc-form-rows" class="ml-calc-form-rows ml-calc-form-result__rows"></div>
+            <template id="ml-calc-row-tpl">
+                <div class="ml-calc-form-row">
+                    <div class="ml-calc-form-row__year"><span class="val"></span> <span class="title">[[++calc-leasing-table-year]]</span></div>
+                    <div class="ml-calc-form-row__main-debt"><span class="title">[[++calc-leasing-table-main-debt]], ₸: </span> <span class="val"></span></div>
+                    <div class="ml-calc-form-row__percent"><span class="title">[[++calc-leasing-table-percent]]: </span> <span class="val"></span>%</div>
+                    <div class="ml-calc-form-row__payment"><span class="title">[[++calc-leasing-table-payment]], ₸: </span> <span class="val"></span></div>
+                    <div class="ml-calc-form-row__balance"><span class="title">[[++calc-leasing-table-balance]], ₸: </span> <span class="val"></span></div>
+                </div>
+            </template>
+        </div>
+        <!-- / Таблица результатов -->
+    </form>
+</div>
+
+<script>
+// Калькулятор
+const mlcForm = document.getElementById("ml-calc-form");
+const mlcAmount = document.getElementsByName("amount")[0];
+const mlcPeriodRadios = document.getElementsByName("year");
+const mlcInitialPercent = document.getElementsByName("initialPercent")[0];
+const mlcRatePercent = document.getElementsByName("ratePercent")[0];
+
+mlcForm.addEventListener("submit", function (e) { e.preventDefault(); });
+
+document.addEventListener("DOMContentLoaded", updateCal);
+
+// Слушатели ввода
+[mlcAmount, mlcInitialPercent, mlcRatePercent].forEach(input => {
+  input.addEventListener("input", updateCal);
+  input.addEventListener("change", updateCal);
+});
+mlcPeriodRadios.forEach(radio => radio.addEventListener("change", updateCal));
+
+function formatNumber(num) {
+  return num.toLocaleString();
+}
+
+function updateCal() {
+  // Ограничения и чтение значений
+  let amount = parseInt(mlcAmount.value.replace(/[^0-9]/g, "")) || 0;
+  let period = parseInt(document.querySelector('input[name="year"]:checked').value);
+  let initialPaymentPercent = Math.min(Math.max(parseFloat(mlcInitialPercent.value) || 10, 10), 50);
+  let ratePercent = Math.min(Math.max(parseFloat(mlcRatePercent.value) || 6, 6), 24);
+
+  // Корректируем поля, если ввели вне диапазона
+  mlcInitialPercent.value = initialPaymentPercent;
+  mlcRatePercent.value = ratePercent;
+
+  // Первоначальный взнос и сумма лизинга
+  let initialPayment = Math.round(amount * initialPaymentPercent / 100);
+  let totalPayment = amount - initialPayment;
+
+  document.querySelectorAll('.ml-calc-initial-payment').forEach(el => el.textContent = `${formatNumber(initialPayment)} ₸`);
+  document.querySelectorAll('.ml-calc-total').forEach(el => el.textContent = `${formatNumber(totalPayment)} ₸`);
+
+  // Расчет графика погашения
+  let payments = [];
+  for (let i = 0; i < period; i++) {
+    let previousBalance = i === 0 ? totalPayment : payments[i-1].balance;
+    let interestPayment = Math.round(previousBalance * ratePercent / 100);
+    let mainDebt = Math.round(totalPayment / period);
+    let totalYearPayment = interestPayment + mainDebt;
+    let balance = Math.max(previousBalance - mainDebt, 0);
+
+    payments.push({
+      year: i + 1,
+      main_debt: mainDebt,
+      percent: ratePercent,
+      payment: interestPayment,
+      total_payment: totalYearPayment,
+      balance: balance
+    });
+  }
+
+  // Отрисовка таблицы
+  const mlContainer = document.getElementById("ml-calc-form-rows");
+  const mlTpl = document.getElementById("ml-calc-row-tpl");
+  mlContainer.innerHTML = "";
+
+  payments.forEach(item => {
+    let row = mlTpl.content.cloneNode(true);
+    row.querySelector('.ml-calc-form-row__year .val').textContent = item.year;
+    row.querySelector('.ml-calc-form-row__main-debt .val').textContent = formatNumber(item.main_debt);
+    row.querySelector('.ml-calc-form-row__percent .val').textContent = item.percent.toFixed(1);
+    row.querySelector('.ml-calc-form-row__payment .val').textContent = formatNumber(item.payment);
+    row.querySelector('.ml-calc-form-row__balance .val').textContent = formatNumber(item.balance);
+    mlContainer.appendChild(row);
+  });
+}
+</script>
+
+</div>
+

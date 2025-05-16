@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сотрудничество | Sky Transfer</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="partner">
+    <div class="container">
+
+        <header class=" header">
+            <div class="row align-items-center justify-content-between">
+                <!-- Логотип и город -->
+                <div class="header__left">
+                    <a href="#" class="header__logo " aria-label="Логотип SkyTransfer">
+                        <img src="img/logo.png" alt="SkyTransfer">
+                    </a>
+                    <div class="header__city d-block city-dropdown" id="cityHeader">
+                        <span class="header__city-label">Ваш город:</span><br>
+
+                        <button class="city-current" type="button" aria-haspopup="listbox">
+                            <span class="city-name">Новосибирск</span>
+
+                            <svg class="city-arrow" width="10" height="6" viewBox="0 0 12 8" fill="none">
+                                <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </button>
+
+                        <ul class="city-list" role="listbox"></ul>
+                    </div>
+                </div>
+
+
+
+                <!-- Контакты, кнопки и бургер -->
+                <div class="header__right">
+                    <!-- Меню (для десктопа) -->
+                    <nav class="header__menu d-none ">
+                        <a href="#" class="header__link">Расчет трансфера</a>
+                        <a href="#" class="header__link">Оплата</a>
+                        <a href="#" class="header__link">Отзывы</a>
+                        <a href="#" class="header__link">Контакты</a>
+                    </nav>
+                    <div class=" header__icons d-none d-xl-flex">
+                        <a href="#" class="header__icon mr-2" aria-label="WhatsApp">
+                            <img src="img/whatsapp.png" alt="WhatsApp">
+                        </a>
+                        <a href="#" class="header__icon" aria-label="Telegram">
+                            <img src="img/tg.png" alt="Telegram">
+                        </a>
+                    </div>
+                    <a href="tel:88047001095" class=" header__phone d-none d-xl-block">
+                        <strong>8 804 700-10-95</strong><br>
+                        <span>Звонок бесплатный</span>
+                    </a>
+                    <div class="header__button d-none d-xl-flex">
+                        <button class="btn btn-white">Заказать звонок</button>
+                    </div>
+
+                    <input type="checkbox" id="side-checkbox" />
+                    <div class="side-panel">
+                        <div>
+                            <div class="side-panel-top">
+                                <div><img src="img/logo.png" alt="Логотип"></div>
+                                <label for="side-checkbox" class="close-btn"></label>
+                            </div>
+                            <div class="only-mob-menu">
+                                <div class="only-mob-menu-item">
+                                    <a href="#">Расчет трансфера</a>
+                                </div>
+                                <div class="only-mob-menu-item">
+                                    <a href="#">Оплата</a>
+                                </div>
+                                <div class="only-mob-menu-item">
+                                    <a href="#">Отзывы</a>
+                                </div>
+                                <div class="only-mob-menu-item">
+                                    <a href="#">Контакты</a>
+                                </div>
+                            </div>
+                            <div class="side-menu">
+                                <div class="side-menu-item">
+                                    <a href="#">Города</a>
+                                </div>
+                                <div class="side-menu-item">
+                                    <a href="#">Направления</a>
+                                </div>
+                                <div class="side-menu-item">
+                                    <a href="#">Блог</a>
+                                </div>
+                                <div class="side-menu-item">
+                                    <a href="#">Сотрудничество</a>
+                                </div>
+                                <div class="side-menu-item">
+                                    <a href="#">О компании</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+
+
+                            <div class=" header__icons">
+                                <a href="#" class="header__icon mr-2" aria-label="WhatsApp">
+                                    <img src="img/whatsapp.png" alt="WhatsApp">
+                                </a>
+                                <a href="#" class="header__icon" aria-label="Telegram">
+                                    <img src="img/tg.png" alt="Telegram">
+                                </a>
+                            </div>
+                            <a href="tel:88047001095" class="d-block header__phone">
+                                <strong>8 804 700-10-95</strong><br>
+                                <span>Звонок бесплатный</span>
+                            </a>
+                            <a href="mailto:support@sky-transfer.ru" class="footer__email">support@sky-transfer.ru</a>
+                            <div class="header__button ">
+                                <button class="btn btn-white">Заказать звонок</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header__burger side-b side-open side-button-1-wr">
+                        <label class="side-button-1" for="side-checkbox">
+                            <div class="side-b side-open"><img src="img/icons/burger.png" alt="Меню"></div>
+                        </label>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        </header>
+
+        <div class="header__bottom-mobile d-flex d-md-none">
+            <a href="tel:88047001095" class="d-block header__phone">
+                <strong>8 804 700-10-95</strong><br>
+                <span>Звонок бесплатный</span>
+            </a>
+            <div class="header__button ">
+                <button class="btn btn-white">Заказать звонок</button>
+            </div>
+        </div>
+    </div>
+    <section class="hero">
+        <div class="container ">
+            <div class="hero__inner">
+                <div class="hero__content">
+                    <h1 class="hero__title">Корпоративным клиентам</h1>
+                    <div class="hero__list d-flex d-md-none">
+                        <div class="hero__list-item">
+                            <div class="hero__list-icon"></div>
+                            <div class="hero__list-text">Фиксированная стоимость поездок</div>
+                        </div>
+                        <div class="hero__list-item">
+                            <div class="hero__list-icon"></div>
+                            <div class="hero__list-text">Только безналичный расчёт</div>
+                        </div>
+                        <div class="hero__list-item">
+                            <div class="hero__list-icon"></div>
+                            <div class="hero__list-text">Постоплата</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="advantages__reviews row">
+                    <div class=" advantages__review">
+                        <div class="advantages__review-card">
+                            <div class="advantages__review-title">
+                                <img src="img/yandex.png" alt="Яндекс" class="advantages__logo">
+                                <span class="advantages__stars">
+                                    <img src="img/5stars.png" alt="Отзыв 5 звёзд">
+                                </span>
+                            </div>
+                            <div class="advantages__review-rating">4.7 (166 отзывов)</div>
+                        </div>
+                    </div>
+                    <div class=" advantages__review">
+                        <div class="advantages__review-card">
+                            <div class="advantages__review-title">
+                                <img src="img/tripadvisor.png" alt="Tripadvisor" class="advantages__logo">
+                                <span class="advantages__stars">
+                                    <img src="img/5stars.png" alt="Отзыв 5 звёзд">
+                                </span>
+                            </div>
+                            <div class="advantages__review-rating">4.7 (166 отзывов)</div>
+                        </div>
+                    </div>
+                    <div class=" advantages__review">
+                        <div class="advantages__review-card">
+                            <div class="advantages__review-title">
+                                <img src="img/google.png" alt="Google" class="advantages__logo">
+                                <span class="advantages__stars">
+                                    <img src="img/5stars.png" alt="Отзыв 5 звёзд">
+                                </span>
+                            </div>
+                            <div class="advantages__review-rating">4.7 (166 отзывов)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="routes container">
+      
+        <!-- Табы (города) -->
+        <div class="routes__tabs">
+            <button class="routes__tab is-active" data-target="corp">Корпоративным клиентам</button>
+
+            <button class="routes__tab" data-target="agent">Агентам</button>
+
+            <button class="routes__tab" data-target="company">Транспортным компаниями</button>
+
+            <button class="routes__tab" data-target="drivers">Водителям</button>
+
+        </div>
+
+        <!-- Карточки направлений -->
+        <div class="routes__tab-content is-visible" id="corp">
+           
+        </div>
+    </section>
+
+    
+
+
+    <div class="container">
+        <section class="urgent-order ">
+            <div class="row justify-content-center">
+                <h2 class="urgent-order__title text-center col-12">Оставьте заявку для<br>сотрудничества</h2>
+            </div>
+            <div class="row justify-content-center">
+
+                <div class="col-12 text-center urgent-order__content">
+
+                    <p class="urgent-order__subtitle">
+                        Для заказа машины оставьте свой номер телефона<br>
+                        <span class="urgent-order__timer">Перезвоним через 40 секунд</span>
+                    </p>
+                    <form class="urgent-order__form">
+                        <input type="tel" class="urgent-order__input" placeholder="Телефон">
+                        <button type="submit" class="urgent-order__button">Заказать</button>
+                    </form>
+                    <p class="urgent-order__privacy">
+                        Нажимая на кнопку, я соглашаюсь с условиями <a href="#">Политики конфиденциальности</a>
+                    </p>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+
+    <section class="faq">
+        <div class="container">
+            <div class="row">
+                <!-- Левая колонка -->
+                <div class="col-12 col-md-6 d-flex flex-column ">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>В каких случаях заказывают корпоративное такси</span>
+                            <span class="faq-icon"><img src="img/icons/plus.png"></span>
+                        </div>
+                        <div class="faq-answer">За последнее десятилетие корпоративная этика значительно продвинулась вперед и многие компании перешли на заказ корпоративного такси. Это позволяет быстро решить проблему трансфера работников. Компания SkyTransfer предлагает весь комплекс услуг по транспортировке сотрудников и доставке посылок в г. Новосибирске. Мы осуществляем трансферы в/из аэропорта, забираем пассажиров с вокзала или отвозим на рейс, обеспечиваем водительское сопровождение в междугородних поездках. Кроме того, возможна почасовая работа такси по городу, например, когда нужно развести сотрудников компании после затянувшегося совещания или ненормированного рабочего дня, а также после корпоративов и мероприятий. SkyTransfer — это гарантия качественного сервиса и безопасности по самым доступным ценам в регионе.</div>
+                    </div>
+                </div>
+
+                <!-- Правая колонка -->
+                <div class="col-12 col-md-6 d-flex flex-column ">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Преимущества заказа корпоративного такси</span>
+                            <span class="faq-icon"><img src="img/icons/plus.png"></span>
+                        </div>
+                        <div class="faq-answer">Сокращение затрат на поездки. Фиксированные ставки на заказ поездки, а также оптимизация транспортных затрат компании за счет настроек доступа к сервису, позволяют сэкономить значительные средства на такси, которые можно пустить на развитие бизнеса.
+                            Внимательность к клиентам. Мы всегда готовы пойти навстречу нашим партнерам в форс-мажорных ситуациях. В частности, обеспечиваем бесплатное ожидание при задержке автобуса, поезда или рейса.
+                            Прозрачная отчетность. Все данные о поездке фиксируются и доступны в онлайн-формате, что избавляет от необходимости тратить время на поиск нужной информации. При необходимости можно установить лимиты и настроить необходимые параметры в личном кабинете.
+                            Экономия времени. Отлаженный механизм заказа такси обеспечивает бесперебойную подачу машин к указанному сроку, сводя риск опозданий к нулю.
+                            Высокий уровень безопасности. Мы ведем строгий контроль за состоянием автомобилей и профессионализмом водителей.
+                            Конфиденциальность. Данные о поездках доступны только нам и нашему клиенту.
+                            Служба поддержки. Каждый заказ отслеживается персональным менеджером, который поможет оперативно решить возникающие сложности.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container">
+        <div class="contact-map row no-gutters">
+            <div id="yandex-map" class="contact-map__background"></div>
+            <!-- карточка контактов -->
+            <div class="col-12 col-lg-6">
+                <div class="contact-card">
+                    <h2 class="contact-card__title">Контакты</h2>
+
+                    <address class="contact-card__addr">
+                        г.&nbsp;Новосибирск, улица Саратовская, дом&nbsp;14
+                    </address>
+
+                    <a href="tel:+78047001095" class="contact-card__phone">8 (804) 700‑10‑95</a>
+
+                    <div class="contact-card__messengers">
+                        <a href="#"><img src="img/whatsapp.png" alt="WhatsApp"></a>
+                        <a href="#"><img src="img/tg.png" alt="Telegram"></a>
+                    </div>
+
+                    <!-- разделительная линия -->
+                    <hr class="contact-card__divider">
+
+                    <p class="contact-card__lead">
+                        Есть вопросы? Оставьте заявку, и мы вам перезвоним.
+                    </p>
+
+                    <form class="contact-card__form ">
+                        <input type="tel" class="contact-card__input" placeholder="Телефон" required>
+                        <button class="contact-card__btn">Отправить</button>
+                    </form>
+
+                    <small class="contact-card__policy">
+                        Нажимая на кнопку, я соглашаюсь с условиями <a href="#">Политики конфиденциальности</a>
+                    </small>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <div class="container">
+        <footer class="footer row">
+            <!-- ВЕРХНЯЯ ГРИД‑ЗОНА -->
+
+            <div class="col-12 footer__top ">
+                <div class="row no-gutters">
+
+                    <!-- ЛОГО + ГОРОД -->
+                    <div class="col-12  col-lg-5 footer__block footer__brand">
+                        <a href="/"><img src="img/logo.png" alt="SkyTransfer" class="footer__logo"></a>
+
+
+                        <!-- ==== Ф У Т Е Р ==== -->
+                        <div class="footer__city city-dropdown" id="cityFooter">
+                            <div style="position: relative;">
+                                <span class="footer-label">Ваш город:</span><br>
+
+                                <button class="city-current" type="button" aria-haspopup="listbox">
+                                    <span class="city-name">Новосибирск</span>
+
+                                    <svg class="city-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                                        <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" />
+                                    </svg>
+
+                                </button>
+                                <ul class="city-list" role="listbox"></ul>
+                            </div>
+
+
+
+
+                        </div>
+
+                    </div>
+
+                    <!-- КАРТА САЙТА -->
+                    <div class="col-12 col-md-4 col-lg-2 footer__block footer__block-links">
+                        <h3 class="footer__heading">Карта сайта</h3>
+                        <ul class="footer__list">
+                            <li><a href="#">Города</a></li>
+                            <li><a href="#">Направления</a></li>
+                            <li><a href="#">О компании</a></li>
+                            <li><a href="#">Блог</a></li>
+                            <li><a href="#">Сотрудничество</a></li>
+                            <li><a href="#">Контакты</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- КОНТАКТЫ -->
+                    <div class="col-12 col-md-4 col-lg-3 footer__block footer__block-contacts">
+                        <h3 class="footer__heading">Контакты</h3>
+                        <a href="tel:+78047001095" class="footer__phone">
+                            <span>8 804 700-10-95</span>
+                            <small>Звонок бесплатный</small>
+                        </a>
+                        <a href="mailto:support@sky-transfer.ru" class="footer__email">support@sky-transfer.ru</a>
+
+                        <div class="footer__messengers">
+                            <a href="#"><img src="img/whatsapp.png" alt="WhatsApp"></a>
+                            <a href="#"><img src="img/tg.png" alt="Telegram"></a>
+                        </div>
+                    </div>
+
+                    <!-- СПОСОБЫ ОПЛАТЫ -->
+                    <div class="col-12 col-md-4 col-lg-2 footer__block footer__payments">
+                        <h3 class="footer__heading">Способы оплаты</h3>
+                        <ul class="footer__pay">
+                            <li><img src="img/visa.png" alt="Visa"></li>
+                            <li><img src="img/mastercard.png" alt="MasterCard"></li>
+                            <li><img src="img/maestro.png" alt="Maestro"></li>
+                            <li><img src="img/mir.png" alt="МИР"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div><!-- /.footer__top -->
+
+            <!-- НИЖНЯЯ СТРОКА -->
+            <div class="row footer__bottom no-gutters">
+                <div class="col-lg-3 footer__copy">
+                    © 2024 SkyTransfer. Все права защищены
+                </div>
+                <div class="col-lg-2 footer__policy ">
+                    <a href="#">Политика конфиденциальности</a>
+                </div>
+                <div class="col-lg-6 footer__disclaimer ">
+                    <p>Представленная информация на сайте не является публичной офертой.</p>
+                    <p>Сайт носит исключительно информационный характер. Точную информацию уточняйте у диспетчера.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+   
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=5cac17b6-1a2d-41ba-bdf4-1a42146f3768"
+        type="text/javascript"></script>
+    <script src="js/script.js"></script>
+
+
+
+
+
+</body>
+
+</html>

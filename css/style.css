@@ -1039,9 +1039,17 @@ body.no-scroll {
 
 
 
-
+.drivers {
+    margin: 60px auto;
+}
 
 /* DRIVERS */
+@media (min-width: 768px) {
+    .drivers {
+        margin: 100px auto;
+    }
+}
+
 .drivers__title {
     text-align: left;
     margin-bottom: 10px;
@@ -1338,6 +1346,8 @@ body.no-scroll {
 
 
 .urgent-order {
+    margin-top: 100px;
+    margin-bottom: 100px;
     background: linear-gradient(135deg, #6C80A2, #384C6D);
     padding: 60px 20px 60px;
     border-radius: 20px;
@@ -1423,6 +1433,84 @@ body.no-scroll {
 .urgent-order__privacy a {
     color: #fff;
     text-decoration: underline;
+}
+
+@media (max-width:768px) {
+    .urgent-order {
+        margin-top: 60px;
+        margin-bottom: 60px;
+        padding: 40px 13px;
+    }
+
+    .urgent-order__title {
+        font-size: 30px;
+        font-weight: 500;
+        margin-bottom: 20px;
+        line-height: 1;
+    }
+
+    .urgent-order__subtitle {
+        font-size: 18px;
+    }
+
+    .urgent-order__content {
+        text-align: center;
+        max-width: 484px;
+        margin: 0 auto;
+    }
+
+    .urgent-order__timer {
+        font-size: 16px;
+        font-weight: 500;
+        opacity: 0.6;
+        line-height: 0.9;
+    }
+
+    .urgent-order__form {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+        overflow: hidden;
+        margin-bottom: 12px;
+    }
+
+    .urgent-order__input::placeholder {
+        font-size: 14px;
+        color: #656565;
+    }
+
+    .urgent-order__input {
+        min-width: 240px;
+        border-radius: 12px;
+        background-color: #fff;
+        color: #000000;
+        padding: 18px 16px;
+        border: none;
+        font-size: 14px;
+        width: 100%;
+        max-width: 100%;
+        height: 50px;
+    }
+
+    .urgent-order__button {
+        height: 50px;
+        border-radius: 12px;
+        background-color: var(--accent-color);
+        border: none;
+        padding: 18px 16px;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 0.9;
+        color: #000;
+        cursor: pointer;
+        white-space: nowrap;
+    }
+    .urgent-order__privacy{
+        font-size:12px;
+        line-height: 0.9;
+    }
+
 }
 
 .faq h2 {
@@ -2170,10 +2258,11 @@ body.no-scroll {
 }
 
 .hero__inner {
-    padding: 60px 100px 77px;
+
+    padding: 70px 100px 77px;
     position: relative;
     /*  опорный контекст для absolute  */
-    min-height: 340px;
+    min-height: 630px;
     border-radius: 20px;
     color: #fff;
     text-align: center;
@@ -2187,6 +2276,211 @@ body.no-scroll {
 
 
 }
+
+.blog .hero {
+    margin-bottom: 124px;
+}
+
+.blog .hero__title {
+    margin-bottom: 10px;
+
+}
+
+.blog .hero__inner .hero__content * {
+    text-align: center;
+}
+
+.blog .hero__subtitle {
+    max-width: 450px;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1;
+    color: #fff;
+}
+
+.blog .hero__inner {
+
+    padding: 135px 20px;
+    position: relative;
+    /*  опорный контекст для absolute  */
+    min-height: 400px;
+    border-radius: 20px;
+    color: #fff;
+    text-align: center;
+
+    /* фон + полупрозрачный градиент */
+    background: linear-gradient(135deg, #6C80A2 0%, #384C6D 100%);
+
+
+}
+
+.blog .advantages__reviews {
+    position: absolute;
+    left: 50%;
+    width: calc(100% - 40px);
+    bottom: -51px;
+    transform: translateX(-50%);
+}
+
+@media (max-width: 1200px) {
+
+
+
+    .blog .advantages__review {
+        width: calc((100% - 20px) / 3);
+    }
+
+    .blog .advantages__review-title {
+        flex-direction: column;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .blog .hero {
+        margin-bottom: 78px;
+    }
+
+    .blog .hero__title {
+        margin-bottom: 28px;
+
+    }
+
+    .blog .hero__inner .hero__content * {
+        text-align: left;
+    }
+
+    .blog .hero__content {
+        text-align: left;
+    }
+
+    .blog .hero__subtitle {
+        max-width: 450px;
+        text-align: left !important;
+        margin: 0;
+    }
+
+    .blog .hero__inner {
+        padding: 26px 20px 127px;
+        border-radius: 0px;
+        min-height: 277px;
+    }
+
+    .blog .advantages__reviews {
+        bottom: -37px;
+    }
+}
+
+
+.partner .hero {
+    margin-bottom: 124px;
+}
+
+.partner .hero__title {
+    margin-bottom: 10px;
+
+}
+
+.partner .hero__inner .hero__content * {
+    text-align: center;
+}
+.partner .hero__subtitle {
+    max-width: 450px;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1;
+    color: #fff;
+}
+
+.partner .hero__inner {
+
+    padding: 274px 20px;
+    position: relative;
+    /*  опорный контекст для absolute  */
+    min-height: 658px;
+    border-radius: 20px;
+    color: #fff;
+    text-align: center;
+
+    /* фон + полупрозрачный градиент */
+    background: 
+    linear-gradient(135deg, rgba(108,128,162,0.7), rgba(56,76,109,0.7)),
+    url("../img/partnership/back.jpg") center/cover no-repeat;
+  
+
+
+}
+
+.partner .advantages__reviews {
+    position: absolute;
+    left: 50%;
+    width: calc(100% - 40px);
+    bottom: -51px;
+    transform: translateX(-50%);
+}
+
+@media (max-width: 1200px) {
+
+
+
+    .partner .advantages__review {
+        width: calc((100% - 20px) / 3);
+    }
+
+    .partner .advantages__review-title {
+        flex-direction: column;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .partner .hero__list{
+        margin-bottom: 0;
+
+    }
+    .partner  .hero {
+        margin-bottom: 78px;
+    }
+
+    .partner  .hero__title {
+        margin-bottom: 28px;
+
+    }
+
+    .partner  .hero__inner .hero__content * {
+        text-align: left;
+    }
+
+    .partner .hero__content {
+        text-align: left;
+    }
+
+    .partner  .hero__subtitle {
+        max-width: 450px;
+        text-align: left !important;
+        margin: 0;
+    }
+
+    .partner  .hero__inner {
+        padding: 186px 20px 255px;
+      
+        border-radius: 0px;
+        min-height: 609px;
+     
+        background: 
+        linear-gradient(135deg, rgba(108,128,162,0.7), rgba(56,76,109,0.7)),
+        url("../img/partnership/backmob.jpg") center/cover no-repeat;
+    }
+
+    .partner  .advantages__reviews {
+        bottom: -37px;
+    }
+}
+
 
 /* ==== Декоративное авто ====================================== */
 .hero__car {
@@ -2220,7 +2514,7 @@ body.no-scroll {
 
 .hero__title {
     font-size: 80px;
-    line-height: 0.9;
+    line-height: 1;
     font-weight: 500;
     margin: 0 0 30px;
 }
@@ -2259,6 +2553,12 @@ body.no-scroll {
     margin-bottom: 4px;
 }
 
+.hero__field--big {
+    height: 70px;
+    line-height: 0.9;
+
+}
+
 .hero__field option {
     padding: 27px 15px;
 }
@@ -2272,6 +2572,10 @@ body.no-scroll {
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
+}
+
+.hero__btn--big {
+    height: 70px;
 }
 
 .hero__btn:hover {
@@ -2322,6 +2626,21 @@ body.no-scroll {
 
 /* центрирование на телефонах */
 @media(max-width:767.98px) {
+    .hero__field--big {
+        height: 50px;
+        line-height: 0.9;
+        padding: 17px 15px;
+        background-color: #F7F7F7;
+
+    }
+
+    .hero__btn--big {
+        height: 50px;
+        line-height: 0.9;
+        padding: 17px 15px;
+
+    }
+
     .hero .container {
         padding: 0px;
     }
@@ -2396,6 +2715,8 @@ body.no-scroll {
         max-width: 380px;
         width: 100%;
     }
+
+
 }
 
 
@@ -2705,6 +3026,8 @@ textarea:focus {}
     border-radius: 20px;
     overflow: hidden;
     min-height: 400px;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 .contact-map__background {
@@ -2864,6 +3187,8 @@ textarea:focus {}
 
 @media(max-width:768px) {
     .contact-map {
+        margin-top: 60px;
+        margin-bottom: 60px;
         padding: 4px 4px 286px;
         width: 100%;
         background: url("../img/map.jpg") center/cover no-repeat;
@@ -3342,4 +3667,285 @@ textarea:focus {}
 
 .c-select.open .c-select__search-wrap {
     display: block;
+}
+
+.city-way .hero__inner {
+    padding-top: 70px;
+}
+
+.hero__change-direction-desktop {
+    position: absolute;
+    left: 100px;
+    top: 0;
+    padding: 12px 20px;
+    border-radius: 0px 0px 12px 12px;
+    background-color: var(--accent-color);
+    color: #070707;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.hero__price {
+    color: var(--accent-color);
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 1;
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 8px;
+    width: fit-content;
+    margin-bottom: 30px;
+}
+
+.city-way .hero__title {
+    margin-bottom: 10px;
+}
+
+.hero__change-direction-mobile {
+    display: none;
+}
+
+.service-cities .routes__title {
+    margin-bottom: 20px;
+}
+
+.routes__subtitle {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 0.9;
+    color: #000;
+    opacity: 0.7;
+    margin-bottom: 40px;
+}
+
+.service-cities .routes__tabs {
+    gap: 0px;
+    margin-bottom: 13px;
+}
+
+.service-cities .routes__tab {
+    background-color: #C6CDD9;
+    width: calc(100% - 2px);
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 0.9;
+    border: 1px solid #E7E7E7;
+    color: #fff;
+    padding: 23px;
+    transition: all ease-in 0.2s;
+
+}
+
+.service-cities .routes__tab:hover {
+    background-color: var(--accent-bg);
+
+}
+
+.service-cities .routes__tab.is-active {
+
+    background-color: var(--accent-bg);
+
+
+}
+
+.service-cities .routes__tabs .routes__item {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 0;
+}
+
+.service-cities .routes__item {
+    margin-bottom: 13px;
+}
+
+.service-cities .routes__direction {
+    color: var(--accent-bg);
+    font-weight: 600;
+}
+
+@media(max-width:992px) {
+    .service-cities .routes__direction {
+        font-weight: 500;
+    }
+
+    .service-cities .routes__tab {
+        font-size: 14px;
+        font-weight: 500;
+        padding: 19px 14px;
+    }
+
+    .routes__tabs.row {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .service-cities .routes__tabs .routes__item {
+        padding-left: 2px;
+        padding-right: 2px;
+        margin-bottom: 0;
+    }
+
+    .routes__subtitle {
+        display: none;
+    }
+
+    .hero__change-direction-desktop {
+        display: none;
+
+    }
+
+    .city-way .hero__inner {
+        padding-top: 26px;
+    }
+
+    .hero__price {
+        font-size: 40px;
+        margin-bottom: 12px;
+    }
+
+    .city-way .hero__title {
+        margin-bottom: 8px;
+    }
+
+    .hero__change-direction-mobile {
+        display: flex;
+        padding: 12px 20px;
+        border-radius: 12px;
+        background-color: var(--accent-color);
+        color: #070707;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1;
+        display: flex;
+        gap: 10px;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 28px;
+    }
+}
+
+.search-wrapper {
+    position: relative;
+    max-width: 528px;
+    width: 100%;
+    margin: 0 auto;
+    height: 70px;
+    margin-bottom: 40px;
+}
+
+.city-way .hero__title {
+    display: flex;
+    align-items: center;
+    gap: 0 20px;
+    flex-wrap: wrap;
+}
+
+.search-input {
+    width: 100%;
+    height: 100%;
+    padding: 0 50px 0 16px;
+    border: 1px solid #E7E7E7;
+    border-radius: 12px;
+    background-color: #f5f5f5;
+    font-size: 16px;
+    color: #656565;
+    line-height: 0.9;
+    outline: none;
+}
+
+.search-icon {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    pointer-events: none;
+}
+
+.routes__search {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.routes__search-item {
+    max-width: 240px;
+    width: 100%;
+    margin-bottom: 0;
+    height: 70px;
+
+}
+
+.routes__search-item.hero__btn {
+    border-radius: 12px;
+}
+
+@media(max-width:786px) {
+    .routes__search {
+        flex-direction: column;
+        gap: 4px;
+        justify-content: center;
+        margin-bottom: 20px;
+        max-width: 100%;
+    }
+
+    .routes__search-item {
+        max-width: 100%;
+
+        height: 50px;
+    }
+
+    .routes__search-item {
+        max-width: 100%;
+
+        height: 50px;
+    }
+
+    .routes__search-item.hero__btn {
+        padding: 18px;
+        font-size: 16px;
+        line-height: 0.9;
+    }
+
+    .search-wrapper {
+        position: relative;
+        max-width: 528px;
+        width: 100%;
+        margin: 0 auto;
+        height: 50px;
+        margin-bottom: 20px;
+    }
+
+    .search-input {
+        width: 100%;
+        height: 100%;
+        padding: 0 50px 0 16px;
+        border: 1px solid #E7E7E7;
+        border-radius: 12px;
+        background-color: #f5f5f5;
+        font-size: 14px;
+        color: #656565;
+        line-height: 0.9;
+        outline: none;
+    }
+
+    .search-icon {
+        width: 36px;
+        height: 36px;
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #888;
+        pointer-events: none;
+    }
 }

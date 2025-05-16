@@ -1,3 +1,56 @@
+ymaps.ready(function () {
+  // Проверка: если экран меньше 768px, ставим другой центр
+  const isMobile = window.innerWidth < 768;
+
+  const map = new ymaps.Map("yandex-map", {
+      center: isMobile
+          ? [55.05, 82.884686]
+          : [55.038150, 82.87],
+      zoom: 14,
+      controls: []
+  });
+  map.container.getElement().blur();
+  const placemark = new ymaps.Placemark(
+      [55.038150, 82.884686], // координаты пина
+      {
+          hintContent: 'г. Новосибирск, ул. Саратовская, 14'
+      },
+      {
+          preset: 'islands#redHomeIcon'
+      }
+  );
+
+  map.geoObjects.add(placemark);
+  map.controls.remove("mapTools")
+      .remove("typeSelector")
+      .remove("searchControl")
+      .remove("trafficControl")
+      .remove("miniMap")
+      .remove("scaleLine")
+      .remove("routeEditor")
+      .remove("smallZoomControl");
+  map.behaviors.disable('scrollZoom');
+  map.behaviors.disable('drag');
+});
+
+ymaps.ready(function () {
+  const mapcalc = new ymaps.Map("yandex-calc-map", {
+      center: [53.346785, 83.776856], // Пример: Барнаул
+      zoom: 10,
+      controls: []
+  });
+  mapcalc.container.getElement().blur();
+  const placemark = new ymaps.Placemark(
+      [53.346785, 83.776856],
+      {
+          hintContent: 'г. Барнаул',
+          balloonContent: 'г. Барнаул, центр'
+      },
+      { preset: 'islands#redHomeIcon' }
+  );
+
+});
+
 const slidesCount = document.querySelectorAll('.swiper .swiper-slide').length;
 
 const isDesktop = window.innerWidth >= 992;
@@ -297,15 +350,16 @@ document.querySelectorAll('.c-select').forEach(setupCustomSelect);
     }
     document.addEventListener('click', closeAllCityLists);
   }
-  
   function initCarSwiper() {
     const swiperContainer = document.querySelector('.car-swiper');
+    if (!swiperContainer) return;
+  
     const wrapper = swiperContainer.querySelector('.car-cards');
     const slides = wrapper.querySelectorAll('.car-tabs__content');
   
     if (window.innerWidth < 768) {
       // Убираем .row чтобы не ломался swiper
-     wrapper.classList.remove('row');
+      wrapper.classList.remove('row');
       swiperContainer.classList.add('swiper');
       wrapper.classList.add('swiper-wrapper');
   
@@ -320,6 +374,7 @@ document.querySelectorAll('.c-select').forEach(setupCustomSelect);
           initialIndex = i;
         }
       });
+  
       const swiper = new Swiper('.car-swiper', {
         slidesPerView: 1,
         spaceBetween: 10,
@@ -328,30 +383,28 @@ document.querySelectorAll('.c-select').forEach(setupCustomSelect);
         on: {
           slideChange(swiper) {
             const index = swiper.activeIndex;
-        
+  
             tabButtons.forEach((btn, i) => {
               const isActive = i === index;
               btn.classList.toggle('is-active', isActive);
-              if (isActive) {
-                btn.scrollIntoView({
-                  behavior: 'smooth',
-                  block: 'nearest',
-                  inline: 'center'
-                });
-              }
             });
           }
         }
-        
       });
   
       tabButtons.forEach((btn, index) => {
         btn.addEventListener('click', () => {
           swiper.slideTo(index);
+          btn.scrollIntoView({
+            behavior: 'smooth',
+            block: 'nearest',
+            inline: 'center'
+          });
         });
       });
     }
   }
   
   window.addEventListener('DOMContentLoaded', initCarSwiper);
+  
   

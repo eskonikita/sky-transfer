@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="city-way">
     <div class="container">
 
         <header class=" header">
@@ -150,8 +150,17 @@
     <section class="hero">
         <div class="container ">
             <div class="hero__inner">
+                <button class="hero__change-direction-desktop change-direction">Поменять направление <img src="img/change.png" alt="Сменить направление" style="width: 18px;height: auto;"></button>
                 <div class="hero__content">
-                    <h1 class="hero__title">Выберите ваш маршрут</h1>
+                    <h1 class="hero__title"><span>Такси Новосибирск</span> 
+                        <svg class="d-none d-md-inline-flex" xmlns="http://www.w3.org/2000/svg" width="64" height="91" viewBox="0 0 64 91" fill="none">
+                            <path d="M14.0795 28.16C13.4006 28.16 12.7494 28.4297 12.2693 28.9098C11.7892 29.3899 11.5195 30.0411 11.5195 30.72C11.5195 31.399 11.7892 32.0501 12.2693 32.5302C12.7494 33.0103 13.4006 33.28 14.0795 33.28V28.16ZM56.8495 32.53C57.3294 32.0499 57.599 31.3988 57.599 30.72C57.599 30.0412 57.3294 29.3902 56.8495 28.9101L40.5576 12.6183C40.3215 12.3738 40.039 12.1787 39.7266 12.0446C39.4143 11.9104 39.0784 11.8398 38.7385 11.8368C38.3986 11.8339 38.0615 11.8986 37.7468 12.0274C37.4322 12.1561 37.1464 12.3462 36.906 12.5865C36.6657 12.8269 36.4756 13.1127 36.3469 13.4273C36.2181 13.742 36.1534 14.0791 36.1563 14.419C36.1593 14.7589 36.2299 15.0948 36.3641 15.4071C36.4982 15.7195 36.6933 16.002 36.9378 16.2381L51.4197 30.72L36.9378 45.202C36.4714 45.6848 36.2134 46.3314 36.2192 47.0027C36.2251 47.6739 36.4943 48.316 36.969 48.7906C37.4436 49.2653 38.0857 49.5345 38.7569 49.5403C39.4281 49.5461 40.0748 49.2881 40.5576 48.8218L56.8495 32.53ZM14.0795 33.28H55.0395V28.16H14.0795V33.28Z" fill="white"/>
+                            <path d="M49.9205 57.6C50.5994 57.6 51.2506 57.8697 51.7307 58.3498C52.2108 58.8299 52.4805 59.4811 52.4805 60.16C52.4805 60.839 52.2108 61.4901 51.7307 61.9702C51.2506 62.4503 50.5994 62.72 49.9205 62.72V57.6ZM7.15055 61.97C6.67062 61.4899 6.40102 60.8389 6.40102 60.16C6.40102 59.4812 6.67062 58.8302 7.15055 58.3501L23.4424 42.0583C23.6785 41.8138 23.961 41.6187 24.2734 41.4846C24.5857 41.3504 24.9216 41.2798 25.2615 41.2768C25.6014 41.2739 25.9385 41.3386 26.2532 41.4674C26.5678 41.5961 26.8536 41.7862 27.094 42.0265C27.3343 42.2669 27.5244 42.5527 27.6531 42.8673C27.7819 43.182 27.8466 43.5191 27.8437 43.859C27.8407 44.1989 27.7701 44.5348 27.6359 44.8471C27.5018 45.1595 27.3067 45.442 27.0622 45.6781L12.5803 60.16L27.0622 74.642C27.5286 75.1248 27.7866 75.7714 27.7808 76.4427C27.7749 77.1139 27.5057 77.756 27.031 78.2306C26.5564 78.7053 25.9143 78.9745 25.2431 78.9803C24.5719 78.9861 23.9252 78.7281 23.4424 78.2618L7.15055 61.97ZM49.9205 62.72H8.96047V57.6H49.9205V62.72Z" fill="white"/>
+                        </svg>
+                            <span class="d-flex d-md-none">-</span>
+                            <span>Барнаул</span></h1>
+                    <div class="hero__price">от 4000 ₽</div>
+                    <button class="hero__change-direction-mobile change-direction">Поменять направление <img src="img/change.png" alt="Сменить направление" style="width: 18px;height: auto;"></button>
 
                     <div class="hero__list d-flex d-md-none">
                         <div class="hero__list-item">
@@ -181,86 +190,12 @@
                             <span class="hero__timer">Перезвоним через&nbsp;40&nbsp;секунд</span>
                         </p>
 
-                        <!--  Откуда  -->
-                        <div class="c-select " data-placeholder="Откуда">
-                            <button type="button" class="c-select__trigger" aria-haspopup="listbox">
-                                <span class="c-select__label">Откуда</span>
-                                <div class="c-select__search-wrap">
-                                    <input type="text" class="c-select__search" placeholder="Поиск…" autocomplete="off">
-                                </div>
-                                <svg class="c-select__chevron" xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink" width="12px" height="12px"
-                                    viewBox="0 -4.5 20 20" version="1.1">
-                                    <g id="Page-1" stroke="none" stroke-width="2" fill="none" fill-rule="evenodd">
-                                        <g id="Dribbble-Light-Preview" transform="translate(-140.000000, -6683.000000)"
-                                            fill="#000000">
-                                            <g id="icons" transform="translate(56.000000, 160.000000)">
-                                                <path
-                                                    d="M84,6532.61035 L85.4053672,6534 L94.0131154,6525.73862 L94.9311945,6526.61986 L94.9261501,6526.61502 L102.573446,6533.95545 L104,6532.58614 C101.8864,6530.55736 95.9854722,6524.89321 94.0131154,6523 C92.5472155,6524.40611 93.9757869,6523.03486 84,6532.61035"
-                                                    id="arrow_up-[#340]">
-
-                                                </path>
-                                            </g>
-                                        </g>
-                                    </g>
-                                </svg>
-                            </button>
-
-                            <ul class="c-select__list" role="listbox">
-                                <li class="c-select__item" data-value="Новосибирск">Новосибирск</li>
-                                <li class="c-select__item" data-value="Барнаул">Барнаул</li>
-                                <li class="c-select__item" data-value="Томск">Томск</li>
-                                <li class="c-select__item" data-value="Москва">Москва</li>
-                                <li class="c-select__item" data-value="Санкт-Петербург">Санкт-Петербург</li>
-                                <li class="c-select__item" data-value="Курск">Курск</li>
-                                <li class="c-select__item" data-value="Воронеж">Воронеж</li>
-                                <li class="c-select__item" data-value="Сочи">Сочи</li>
-                            </ul>
-
-                            <input type="hidden" name="from" required>
-                        </div>
-
-                        <!--  Куда  -->
-                        <div class="c-select" data-placeholder="Куда">
-                            <button type="button" class="c-select__trigger" aria-haspopup="listbox">
-                                <span class="c-select__label">Куда</span>
-                                <div class="c-select__search-wrap">
-                                    <input type="text" class="c-select__search" placeholder="Поиск…" autocomplete="off">
-                                </div>
-                                <svg class="c-select__chevron" xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink" width="12px" height="12px"
-                                    viewBox="0 -4.5 20 20" version="1.1">
-                                    <g id="Page-1" stroke="none" stroke-width="2" fill="none" fill-rule="evenodd">
-                                        <g id="Dribbble-Light-Preview" transform="translate(-140.000000, -6683.000000)"
-                                            fill="#000000">
-                                            <g id="icons" transform="translate(56.000000, 160.000000)">
-                                                <path
-                                                    d="M84,6532.61035 L85.4053672,6534 L94.0131154,6525.73862 L94.9311945,6526.61986 L94.9261501,6526.61502 L102.573446,6533.95545 L104,6532.58614 C101.8864,6530.55736 95.9854722,6524.89321 94.0131154,6523 C92.5472155,6524.40611 93.9757869,6523.03486 84,6532.61035"
-                                                    id="arrow_up-[#340]">
-
-                                                </path>
-                                            </g>
-                                        </g>
-                                    </g>
-                                </svg>
-                            </button>
-
-                            <ul class="c-select__list" role="listbox">
-                                <li class="c-select__item" data-value="Новосибирск">Новосибирск</li>
-                                <li class="c-select__item" data-value="Барнаул">Барнаул</li>
-                                <li class="c-select__item" data-value="Томск">Томск</li>
-                                <li class="c-select__item" data-value="Москва">Москва</li>
-                                <li class="c-select__item" data-value="Санкт-Петербург">Санкт-Петербург</li>
-                                <li class="c-select__item" data-value="Курск">Курск</li>
-                                <li class="c-select__item" data-value="Воронеж">Воронеж</li>
-                                <li class="c-select__item" data-value="Сочи">Сочи</li>
-                            </ul>
-
-                            <input type="hidden" name="to" required>
-                        </div>
+                        <input type="tel" class="hero__field hero__field--big" placeholder="Телефон">
+                   
+           
 
 
-                        <button type="submit" class="hero__btn">Рассчитать</button>
+                        <button type="submit" class="hero__btn hero__btn--big">Заказать</button>
                         <div class="hero__privacy">
                             Нажимая на кнопку, я соглашаюсь с условиями <a href="#">Политики конфиденциальности</a>
                         </div>
@@ -347,346 +282,7 @@
             </div>
         </div>
     </section>
-    <section class="routes container">
-        <!-- Заголовок -->
-        <div class="row">
-            <div class="col-12">
-                <h2 class="routes__title">Популярные направления и города России</h2>
-            </div>
-        </div>
 
-        <!-- Преимущества -->
-        <div class="row routes__benefits">
-            <div class="routes__benefit">
-                <span class="routes__icon"></span>
-                <span class="routes__text">Бесплатная отмена <br class="d-none d-md-flex">и изменение заказа*</span>
-            </div>
-
-
-            <div class="routes__benefit">
-                <span class="routes__icon"></span>
-                <span class="routes__text">Оплата на сайте <br class="d-none d-md-flex">или наличными на месте</span>
-            </div>
-
-
-            <div class="routes__benefit">
-                <span class="routes__icon"></span>
-                <span class="routes__text">Поддержка на русском 24/7<br class="d-none d-md-flex"> и водители с
-                    лицензией</span>
-            </div>
-
-        </div>
-
-        <!-- Табы (города) -->
-        <div class="routes__tabs">
-            <button class="routes__tab is-active" data-target="msc">Москва</button>
-
-            <button class="routes__tab" data-target="spb">Санкт-Петербург</button>
-
-            <button class="routes__tab" data-target="novosib">Новосибирск</button>
-
-            <button class="routes__tab">Екатеринбург</button>
-
-            <button class="routes__tab">Казань</button>
-
-            <button class="routes__tab">Воронеж</button>
-
-        </div>
-
-        <!-- Карточки направлений -->
-        <div class="routes__tab-content is-visible" id="msc">
-            <div class="row routes__list ">
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Санкт-Петербург - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Санкт-Петербург - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Санкт-Петербург - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Санкт-Петербург - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Санкт-Петербург - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Санкт-Петербург - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Санкт-Петербург - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Санкт-Петербург - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Санкт-Петербург - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Санкт-Петербург - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Санкт-Петербург - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Санкт-Петербург - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Санкт-Петербург - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Санкт-Петербург - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Новосибирск - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-
-            </div>
-        </div>
-        <div class="routes__tab-content " id="spb">
-            <div class="row routes__list">
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Новосибирск - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Новосибирск - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Новосибирск - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Новосибирск - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Новосибирск - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Новосибирск - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Новосибирск - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Новосибирск - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Новосибирск - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Новосибирск - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Новосибирск - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Новосибирск - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Новосибирск - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Новосибирск - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Новосибирск - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-
-            </div>
-        </div>
-        <div class="routes__tab-content " id="novosib">
-            <div class="row routes__list ">
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Санкт-Петербург - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Санкт-Петербург - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Санкт-Петербург - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Санкт-Петербург - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Санкт-Петербург - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Санкт-Петербург - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Санкт-Петербург - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Санкт-Петербург - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Санкт-Петербург - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Санкт-Петербург - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Санкт-Петербург - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Санкт-Петербург - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Санкт-Петербург - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Санкт-Петербург - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-                <a href="#" class="col-6  col-md-4 col-lg-3 col-xl-1-5 routes__item">
-                    <div class="routes__card">
-                        <div class="routes__direction">Новосибирск - Москва</div>
-                        <div class="routes__price">от <strong>8000 RUB</strong></div>
-                    </div>
-                </a>
-
-            </div>
-        </div>
-
-        <!-- Кнопка показать еще -->
-        <div class="row justify-content-center">
-            <div class="col-auto">
-                <button class="routes__more">Показать еще</button>
-            </div>
-        </div>
-    </section>
     <section class="calc">
         <div class="container">
             <div class=" calc_inner row no-gutters">
